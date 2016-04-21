@@ -1,0 +1,289 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/solarized-dark.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <style>
+      .reveal code {font-family: 'Source Code Pro',;}
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>React Native</h1>
+          <h4>React + Native = SANT ❤️ 😍👭</h4>
+          <p><small>Laget av Andreas Drivenes👦🏻</small></p>
+          <p><small>
+            Github: 
+            <a href="http://github.com/andybb" target="_blank">@andybb</a></br>
+            <a href="mailto:andreas.drivenes@gmail.com">andreas.drivenes@gmail.com</a>
+          </small></p>
+        </section>
+
+        <section>
+          <h2>
+            Hva er React?
+          </h2>
+          <ul>
+            <li>JavaScript-rammeverk fra Facebook</li>
+            <li>Komponentbaserte brukergrensesnitt</li>
+            <li>Gigantisk økosystem</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Komponentstruktur</h3>
+          <img data-src="img/comp_hierarchy.png"/>
+        </section>
+
+        <section>
+          <h2>Hvordan fungerer React?🤔</h2>
+          <ul style="width:35%">
+            <li>Komponenter beskrives som funksjoner</li>
+            <li>Dataflyt fra toppen og nedover</li>
+            <li>Virtuell DOM</li>
+            <li>JSX</li>
+          </ul>
+          <figure style="float: right; width:60%;">
+            <img data-src="http://www.ibm.com/developerworks/library/wa-react-intro/figure1.png">
+            <figcaption><small>React-arkitekturen. Kilde: IBM</small></figcaption>
+          </figure>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ### Komponenter som funksjoner
+
+            ```javascript
+            function SayHello() {
+              return React.createElement('p', null, 'Hallo!');
+            } 
+            // et annet sted:
+            var hello = React.createElement(SayHello);
+            ```
+            Dette er ekvivalent med følgende JSX-versjon:
+            ```javascript
+            function SayHello() {
+              return (<p>Hallo!</p>);
+            }
+            var hello = <SayHello/>
+
+            ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ### Tre måter å lage komponenter på
+
+            React.createClass:
+            ```javascript
+            var hello = React.createClass({
+              render: function() {
+                return <p>Hallo!</p>;
+              }
+            }); 
+            ```
+
+            Funksjonell komponent (hvis man kun trenger `render`):
+            ```javascript
+            function Hello() {
+              return <p>Hallo!</p>;
+            }
+            ```
+
+            ES6-klasse:
+            ```javascript
+            class Hello extends React.Component {
+              render() {
+                return <p>Hallo!</p>;
+              }
+            }
+            ```
+          </script>
+        </section>
+
+        <section>
+          <h2>Hva er «native»?</h2>
+          <p>Markedsandel: Android og iOS (98,4%. Gartner 4. kv. 2015)</p>
+          <p>Ulemper:</p>
+          <ul>
+            <li>Mange millioner linjer Java og Objective C</li>
+            <li>Forskjellige designretningslinjer</li>
+            <li>Forskjellige rammeverk for brukergrensesnitt 
+              (<code>UIKit</code>, <code>android.view</code> og <code>android.widget</code>)</li>
+            <li>Lite kodedeling</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Hvorfor «native»?</h2>
+          <p>Hastighet, hastighet, hastighet...🏎💨</p>
+          <p>...og brukervennlighet👩📱👌</p>
+        </section>
+
+        <section>
+          <h3>Problem: Vise fram bilde og tekst</h3>
+          <img data-src="img/unified_components.png"/>
+        </section>
+
+        <section>
+          <h3>Hva skjer om man slår dette sammen til én modell?</h3>
+          <h2>React-komponenter!</h2>
+        </section>
+
+        <section>
+          <img data-src="img/react_component.png"/>
+        </section>
+
+        <section data-background="https://pixabay.com/static/uploads/photo/2015/02/21/09/57/heart-644091_960_720.png">
+          <h2>React + Native = SANT ❤️ 😍👭</h2>
+        </section>
+
+
+        <section>
+          <h2>React Native</h2>
+          <ul>
+            <li>React-arkitekturen til andre plattformer enn web</li>
+            <li><strong>iOS:</strong> våren 2015. 
+              <strong>Android:</strong> høsten 2015. <strong>Windows:</strong> under utvikling av Microsoft og Facebook.</li>
+            <li>Ikke <q>&ldquo;write once, run everywhere&rdquo;</q>, 
+              men <q>&ldquo;learn once, write everywhere&rdquo;</q>.
+            </li>
+            <li>React til <code>canvas</code> og WebGL</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>React + Native = SANT ❤️ 😍👭</h3>
+          <ul>
+            <li>Del 90 % av koden mellom Android og iOS</li>
+            <li>Øk utviklerproduktiviteten</li>
+            <li>
+              Bruk JavaScript til å
+              <ul>
+                <li>snakke med «native» komponenter</li>
+                <li>beskrive brukegrensesnittet</li>
+                <li>skrive applikasjonslogikken</li>
+              </ul>
+            </li>
+            <li>Alt kjører i en separat tråd</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>React Native-arkitekturen</h2>
+          <figure>
+            <img data-src="http://www.ibm.com/developerworks/library/mo-bluemix-react-native-ios8/Figure1.png">
+            <figcaption><small>Kilde: IBM</small></figcaption>
+          </figure>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Hallo, verden! 
+
+            ```javascript
+            import React, { Component, StyleSheet, 
+              Text, View, AppRegistry,} from 'react-native';
+
+            class HelloWorld extends Component {
+              render() {
+                return (
+                  <View style={styles.container}>
+                    <Text style={styles.welcome}>
+                      Hallo, verden! 
+                    </Text>
+                  </View>
+                );
+              }
+            }
+
+            AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
+            ```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Hva med styling? 
+
+            ```javascript
+            const styles = StyleSheet.create({
+              container: {
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#F5FCFF',
+              },
+              welcome: {
+                fontSize: 20,
+                textAlign: 'center',
+                margin: 10,
+              },
+            });
+            ```
+            Ligner ikke dette på CSS?
+          </script>
+        </section>
+
+        <section>
+          <h2>Design av komponenter</h2>
+          <ul>
+            <li>Skriv en delmengde av CSS i JavaScript</li>
+            <li>HTML, CSS og logikk i JavaScript?😯😯😯</li>
+            <li>Inline styling?😯😯😯</li>
+            <li>Flexbox brukes til layout</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Flexbox</h3>
+          <p>«flex container»</p>
+          <ul>
+            <li><strong>flex</strong> (dette er en boks med flex i, tar inn et tall
+            som sier hvor mye plass boksen skal ta)</li>
+            <li><strong>flexDirection</strong> (horisontalt/vertikalt)</li>
+            <li><strong>flexWrap</strong> (samme linje, ny linje)</li>
+            <li><strong>justifyContent</strong> (hvordan elementene skal ligge på samme akse: (sentrert, utstrukket, start, slutt, dele plass, etc.)</li>
+            <li><strong>alignItems</strong> (hvordan elementene skal ligge på motsatt akse)</li>
+          </ul>
+        </section>
+
+        <section>
+          <p>«flex item»</p>
+          <ul>
+            <li><strong>flex</strong> (dette er en boks med flex i, tar inn et tall
+            som sier hvor mye plass boksen skal ta i hovedboksen)</li>
+            <li><strong>alignSelf</strong> (overstyr alignItems fra foreldreboksen)</li>
+          </ul>
+          <p>Den beste måten å lære det på, er å prøve selv og se hva som skjer!</p>
+          <p>Se på illustrasjoner på Internett</p>
+        </section>
+        
+        <section>
+          <h1>Livedemo</h1>
+          <p>Så mye vi rekker</p>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/lib/js/head.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
+    <script>
+      Reveal.initialize({
+          dependencies: [
+              // Interpret Markdown in <section> elements
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/markdown/marked.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/markdown/markdown.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              // Syntax highlight for <code> elements
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              // Speaker notes
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/plugin/notes/notes.min.js', async: true },
+          ]
+      });
+    </script>
+  </body>
+</html>
